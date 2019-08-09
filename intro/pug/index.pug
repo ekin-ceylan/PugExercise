@@ -1,1 +1,38 @@
-doctype html
+//- doctype html
+doctype transitional 
+//- not support single attr
+html
+    head
+        link(rel="stylesheet" href="style.css")
+
+        style. 
+            p{
+                color: red;
+                text-decoration: underline;
+            }
+    body
+        h1#page-title Hello World
+
+        - const pStyles = {"text-align": "center", "text-transform": "uppercase"};
+        p(style=pStyles) This is an HTML file!
+
+        p.big-para.
+            this is a paragraph
+            end this is second line
+        ul
+            li This is a line #1
+            li This is a line #2
+            li This is a line #3
+        .display-box
+            input(type="password" name="Password" data-js=`${1 > 2 ? 'OK' : 'NOT OK'}`)#Password
+            
+            - const myClasses = ['class1', 'class2', 'class3']
+            div.my-div(class=myClasses)
+            
+            - const myStyles = {'color': 'red', 'background-color': 'blue'}
+            div(style=myStyles)
+            
+            - const myAttributes = {'src': 'myPhoto.png', 'alt': 'This is my photo'}
+            img&attributes(myAttributes)
+
+            input(type="text" disabled)
