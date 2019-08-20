@@ -1,0 +1,35 @@
+doctype html
+html
+    head
+        title Conditionals in Pug
+    body
+        h2 Conditionals in Pug
+
+        - let user = {name: 'Domenic', loggedIn: false, lastLogin: 6}
+        if user.loggedIn
+            p
+                | Welcome back, 
+                strong #{ user.name }
+        else if user.lastLogin < 10
+            p Your last login was #{ user.lastLogin } minutes ago
+            p
+                a(href="/login") Log In Again
+        else
+            a(href="/login") Log In
+
+        
+        h2 Case Statement in Pug
+
+        // orderStatus => Pending || In_Transit || Completed
+        -const orderStatus = 'Completed'
+
+        case orderStatus
+            when 'Pending'
+                p Your order has been placed and will be sent shortly.
+            when 'In_Transit'
+                p Your order is on the move - you should receive it soon!
+            when 'Completed'
+                p Your order has been completed.
+            default
+                p Sorry! We aren't sure what happened with your order.
+            

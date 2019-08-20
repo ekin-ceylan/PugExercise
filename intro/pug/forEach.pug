@@ -1,0 +1,31 @@
+doctype html
+html
+    head
+    body
+        h1 For/Each Loop
+        
+        each n, i in [50, 2, 3, 4, 5]
+            p= n + " - " + i
+
+        br
+        br
+
+        - const names = ['Dom', 'Sophie', 'Mark'];
+        each n, i in names
+            p= n + ' - ' + i
+
+        br
+        br
+        
+        //- for ve each aynı işi yapar
+        - const grades = {'Web Dev': 85, 'Software Design': 76};
+        for n, i in grades
+            p= n + ' - ' + i
+
+        br
+        br
+
+        for n, i in []
+            p= n + " - " + i
+        else
+            strong No values are here
